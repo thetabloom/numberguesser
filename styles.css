@@ -24,12 +24,10 @@ h1 {
 }
 
 form {
-  display: block;
   margin: 2.8em 0;
 }
 
-input {
-  
+#player-guess-input-field {
   border: 1.5px solid #d0d2d3;
   font-size: 1.6em;
   height: .7em;
@@ -63,9 +61,18 @@ button:hover {
 h2 {
   font-color: #404041;
   text-align: center;
+  font-size: 1.7em;
 }
 
-article {
+.last-guess-was {
+  margin-top: 4em;
+}
+
+.too-low-too-high {
+  margin: 0 0 2em 0;
+}
+
+.your-guess {
   color: #eb008b;
   font-size: 20em;
   text-align: center;
@@ -75,32 +82,31 @@ span {
   color: lightgrey;
 }
 
-.guess {
+.button-guess {
   float: left;
   width: 7em;
   margin-left: 1.7em;
   padding: .1em;
 }
 
-.clear {
+.button-clear {
   float: right;
   margin-right: 1.7em;
   width: 7em;
   padding: .1em;
 }
 
-.last-player-guess {
-  margin-top: 4em;
+.output {
+  color: #ed458b;
+  font-size: 12em;
+  text-align: center;
 }
 
-.too-low-too-high {
-}
-
-.reset {
-  margin: 3em 0 1em 1.9em;
-  padding: .2em;
-  width: 21em;
+.button-reset {
   font-size: 1.2em;
+  margin: 0 0 1em 1.9em;
+  padding: .2em;
+  width: 21.5em;
 }
 
 
