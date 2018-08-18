@@ -1,12 +1,11 @@
 * {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
 main { 
-  margin: 0 auto;
   width: 30rem;
 }
 
@@ -27,7 +26,7 @@ form {
   margin: 2.8em 0;
 }
 
-#player-guess-input-field {
+.player-guess-input-field {
   border: 1.5px solid #d0d2d3;
   font-size: 1.6em;
   height: .7em;
@@ -65,7 +64,11 @@ h2 {
 }
 
 .last-guess-was {
-  margin-top: 4em;
+  margin-top: 3.7em;
+}
+
+.your-guess-display {
+  height: 16em;
 }
 
 .too-low-too-high {
@@ -98,8 +101,10 @@ span {
 
 .output {
   color: #ed458b;
-  font-size: 12em;
+  font-size: 11em;
   text-align: center;
+  height: 1em;
+  margin-bottom: .2em;
 }
 
 .button-reset {
