@@ -19,16 +19,21 @@ buttonGuess.addEventListener('click', function(event){
 buttonClear.addEventListener('click', function (event) {
   event.preventDefault();
   guess.value = '';
-  lowHigh.innerText = 'Guess a number';
+  output.innerText = '';
+  lowHigh.innerText = '';
+});
+
+buttonReset.addEventListener('click', function (event) {
+  location.reload();
 });
 
 function displayGuess() {
   var parsedNumber = parseInt(guess.value);
   output.innerText = guess.value;
   if (parsedNumber > randomNumber) {
-    lowHigh.innerText = 'That is too high';
+    lowHigh.innerText = 'That is too high!';
   } else if (parsedNumber < randomNumber) {
-    lowHigh.innerText = 'That is too low';
+    lowHigh.innerText = 'That is too low :(';
   } else if (parsedNumber === randomNumber) {
     lowHigh.innerText = 'BOOM!';
   }
@@ -38,7 +43,15 @@ function displayGuess() {
 
 
 
-// Display results and feedback:
-// If their guess is too high, it should display: “That is too high”
-// If their guess is too low, it should display: “That is too low”
-// If the guess is correct, it should display: “BOOM!”
+
+
+
+
+
+
+
+
+
+
+
+
