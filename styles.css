@@ -22,8 +22,12 @@ h1 {
   text-align: center;
 }
 
-form {
+.play {
   margin: 2.8em 0;
+}
+
+.range {
+  margin-top: 10em;
 }
 
 .player-guess-input-field {
@@ -72,7 +76,7 @@ h2 {
 }
 
 .too-low-too-high {
-  margin: 0 0 2em 0;
+  margin: 3em 0 2em 0;
 }
 
 .your-guess {
