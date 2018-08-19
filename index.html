@@ -2,35 +2,43 @@
 <html lang="en">
   <head>
     <title>Number Guesser</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>Number <span>Guesser</span>
       </h1> 
-      </header>
-    <main> 
-      <form>
-        <input type="number" placeholder="Enter your guess" class="player-guess-input-field"> 
-          <button class="button-guess">Guess
-          </button>
-          <button class="button-clear" >Clear
-          </button>
-      </form>
-        <h2 class="last-guess-was">Your last guess was
-        </h2>
-          <p class="output">
-          </p> 
-        <h2 class="too-low-too-high">
-        </h2> 
-          <button class="button-reset" >Reset
-          </button>
-    </main>
-    <script src="script.js">
-    </script>
+    </header>
+      <main> 
+        <form class="play">
+          <input type="number" placeholder="Enter your guess" class="player-guess-input-field"> 
+            <button class="button-guess" disabled="true">Guess
+            </button>
+            <button class="button-clear" disabled="true">Clear
+            </button>
+        </form>
+          <h2 class="last-guess-was">Your last guess was:
+          </h2>
+            <p class="output">
+            </p> 
+          <h2 class="too-low-too-high">
+          </h2>
+            <button class="button-reset" disabled="true">Reset
+            </button>
+          <form class="range">
+          <input type="number" placeholder="MIN" class="min-range">
+            <button class="button-min" >Enter
+            </button> 
+          <input type="number" placeholder="MAX" class="max-range"> 
+            <button class="button-max" >Enter
+            </button>
+        </form>
+      </main>
+      <script src="script.js">
+      </script>
   </body>
 </html>
 
-<!-- disabled="true" -->
+
 
