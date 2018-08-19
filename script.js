@@ -9,6 +9,7 @@ var buttonMin = document.querySelector('.button-min');
 var buttonMax = document.querySelector('.button-max');
 var lowHigh = document.querySelector( '.too-low-too-high');
 var output = document.querySelector('.output');
+var rangeOutput = document.querySelector('.range-output')
 var randomNumber = Math.floor(Math.random() * 100);
 console.log(randomNumber)
 
@@ -27,14 +28,14 @@ buttonClear.addEventListener('click', function (event) {
 
 buttonMin.addEventListener('click', function (event) {
   event.preventDefault();
-  minRange.value = '';
-  minGuessRange();
+  minRange.value = guess.value -10;
+  minMaxGuessRange();
 });
 
 buttonMax.addEventListener('click', function (event) {
   event.preventDefault();
-  maxRange.value = '';
-  maxGuessRange();
+  maxRange.value = guess.value +10;
+  minMaxGuessRange(); 
 });
 
 buttonReset.addEventListener('click', function (event) {
@@ -74,16 +75,27 @@ function enableButtons(event) {
   }
 }
 
-// function minGuessRange() {
-// var parsedNumber = parseInt(minRange.value);
- 
-//  if (parsedNumber === randomNumber) {
-//   parsedNumber.value + 10;
-
+// function minMaxGuessRange() {
+// var minMaxGuess = parseInt(minRange.value && maxRange.value);
+//   if (output = randomNumber)
+//   randomNumber = Math.floor(Math.random() - 10);
+//   // output - 10;
+//   lowHigh.innerText = 'Min and Max Range increased by 10';
 // }
-// }
 
-// console.log(parsedNumber.value)
+function minMaxGuessRange() {
+  var minMaxGuess = parseInt(maxRange.value || minRange.value);
+  console.log(minMaxGuess)
+  rangeOutput.innerText = maxRange.value && minRange.value
+  if (guess.value = randomNumber) {
+    randomNumber = Math.floor(Math.random(minRange, maxRange) * 10)
+    console.log(maxRange.value);
+    console.log(minRange.value)
+  }
+}
+
+
+
 
 // Phase 3
 // Add additional inputs that allow the user to specify the minimum/maximum range.
@@ -93,7 +105,9 @@ function enableButtons(event) {
 // Appropriate UI is incorporated such that user understands what is happening.
 // (Pro-tip: You’ll need to adjust the input fields to accept the new minimum and maximum numbers.)
 
+// you could make your min-max function 1 function, where you are basically parsing the user input from both min input and max input and assigning them to a variable called minGuess or maxGuess 
 
+// then you could reassign your get random number function and pass the minGuess and maxGuess as parameters
 
 
 
