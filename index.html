@@ -11,11 +11,11 @@
       </h1> 
     </header>
       <main> 
-        <form class="play">
-          <input type="number" placeholder="Enter your guess" class="player-guess-input-field"> 
-            <button class="button-guess" disabled="true">Guess
+        <form class="play" aria-label="playing field">
+          <input type="number" placeholder="Enter your guess" class="player-guess-input-field" aria-label="enter your numerical guess here"> 
+            <button class="button-guess" aria-label="guess-button" disabled="true">Guess
             </button>
-            <button class="button-clear" disabled="true">Clear
+            <button class="button-clear" aria-label="clear the field button"disabled>Clear
             </button>
         </form>
           <h2 class="last-guess-was">Your last guess was:
@@ -29,10 +29,8 @@
             <p class="range-output">
             </p> 
           <form class="range">
-          <input type="number" placeholder="Minus 10" class="min-range">
-            <button class="button-min" >Enter
-            </button> 
-          <input type="number" placeholder="Plus 10" class="max-range"> 
+          <input type="number"  class="min-range" value= "1"> 
+          <input type="number" class="max-range" value="100">
             <button class="button-max" >Enter
             </button>
         </form>

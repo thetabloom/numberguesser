@@ -1,7 +1,5 @@
 
 var guess = document.querySelector('.player-guess-input-field');
-var minRange = document.querySelector('.min-range');
-var maxRange = document.querySelector('.max-range');
 var buttonGuess = document.querySelector('.button-guess');
 var buttonClear = document.querySelector('.button-clear');
 var buttonReset = document.querySelector('.button-reset');
@@ -10,13 +8,15 @@ var buttonMax = document.querySelector('.button-max');
 var lowHigh = document.querySelector( '.too-low-too-high');
 var output = document.querySelector('.output');
 var rangeOutput = document.querySelector('.range-output')
-var randomNumber = Math.floor(Math.random() * 100);
-console.log(randomNumber)
+var randomNumber = Math.floor(Math.random() * 100 + 1);
+var minRange = document.querySelector('.min-range');
+var maxRange = document.querySelector('.max-range');
 
 
 buttonGuess.addEventListener('click', function(event) {
   event.preventDefault();
   displayGuess();
+  var randomNumber = Math.floor(Math.random() * 100 + 1);
 });
 
 buttonClear.addEventListener('click', function (event) {
@@ -26,30 +26,22 @@ buttonClear.addEventListener('click', function (event) {
   lowHigh.innerText = '';
 });
 
-buttonMin.addEventListener('click', function (event) {
-  event.preventDefault();
-  minRange.value = guess.value -10;
-  minMaxGuessRange();
-});
-
 buttonMax.addEventListener('click', function (event) {
   event.preventDefault();
-  maxRange.value = guess.value +10;
   minMaxGuessRange(); 
 });
 
 buttonReset.addEventListener('click', function (event) {
-  location.reload();
+  resetRandom();
 });
 
 guess.addEventListener('keyup', enableButtons);
 
 
-
 function displayGuess() {
   var parsedNumber = parseInt(guess.value);
   output.innerText = guess.value;
-    if (parsedNumber > 100 || parsedNumber < 1) {
+    if (parsedNumber > maxRange.value || parsedNumber < minRange.value) {
     lowHigh.innerText = 'Out of Range';
   } else if (parsedNumber > randomNumber) {
     lowHigh.innerText = 'That is too high!';
@@ -57,9 +49,11 @@ function displayGuess() {
     lowHigh.innerText = 'That is too low :(';
   } else if (parsedNumber === randomNumber) {
     lowHigh.innerText = 'BOOM!';
-  }
+    maxRange.value = 10 + parseInt(maxRange.value);
+    minRange.value = -10 + parseInt(minRange.value);
+    minMaxGuessRange();
+  } 
 }
-
 
 function enableButtons(event) {
   event.preventDefault();
@@ -75,27 +69,18 @@ function enableButtons(event) {
   }
 }
 
-// function minMaxGuessRange() {
-// var minMaxGuess = parseInt(minRange.value && maxRange.value);
-//   if (output = randomNumber)
-//   randomNumber = Math.floor(Math.random() - 10);
-//   // output - 10;
-//   lowHigh.innerText = 'Min and Max Range increased by 10';
-// }
-
 function minMaxGuessRange() {
-  var minMaxGuess = parseInt(maxRange.value || minRange.value);
-  console.log(minMaxGuess)
-  rangeOutput.innerText = maxRange.value && minRange.value
-  if (guess.value = randomNumber) {
-    randomNumber = Math.floor(Math.random(minRange, maxRange) * 10)
-    console.log(maxRange.value);
-    console.log(minRange.value)
-  }
+  var maxGuess = parseInt(maxRange.value) || 100;
+  var minGuess = parseInt(minRange.value) || 1;
+  randomNumber = Math.floor(Math.random() * (maxGuess - minGuess + 1)) + minGuess;
+} 
+
+function resetRandom() {
+  guess.value = '';
+  output.innerText = '';
+  lowHigh.innerText = '';
+  var randomNumber = Math.floor(Math.random() * 100 + 1);
 }
-
-
-
 
 // Phase 3
 // Add additional inputs that allow the user to specify the minimum/maximum range.
