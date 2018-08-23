@@ -123,20 +123,33 @@ span {
   height: 10em;
   margin-top: 2em;
   width: 11em;
+  padding-bottom: 5em;
 }
 
 .range-output {
   color: #ed458b;
   font-weight: bold;
   line-height: 1.8em;
+  padding: 3em 0 1em 0;
   text-align: center;
 }
 
-.your-own-range-output {
+.your-own-range-output, .choose-adventure {
   color: black;
   font-weight: bold;
   line-height: 1.8em;
   text-align: center;
+}
+
+.choose-adventure {
+  font-style: italic;
+}
+
+label {
+ color: #ed458b;
+ font-weight: bold;
+ font-style: italic;
+ padding-left: 4.5em;
 }
 
 .max-range, .min-range {

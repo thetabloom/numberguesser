@@ -24,23 +24,26 @@
             </p> 
           <h2 class="too-low-too-high">Enter a Guess: 
           </h2>
-            <button class="button-reset" disabled="true">Reset
+            <button class="button-reset" aria-label="button to reset the game" disabled="true">Reset
             </button>
               <p class="range-output">
-                Number Guesser Levels up your guess range by expanding it -10 and +10.  
+                Level up your guess range by expanding it -10 and +10.  
+              </p>
+              <p class="choose-adventure">
+                CHOOSE YOUR OWN ADVENTURE!
               </p>
               <p class="your-own-range-output">
-                You can also set your own range!
+                Set your own range!
                 Hit enter below!
               </p> 
         <form class="range">
           <label for="min">min
-            <input type="number" class="min-range" value="1"> 
+            <input type="number" class="min-range" value="1" aria-label="enter a minimum range here"> 
           </label>
           <label for="max">max
-            <input type="number" class="max-range" value="100">
+            <input type="number" class="max-range" value="100" aria-label="enter a maximum range here">
           </label>
-            <button class="button-max" >Enter
+            <button class="button-max" aria-label="click here to enter new playing range">Enter
             </button>
         </form>
       </main>
