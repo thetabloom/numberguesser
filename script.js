@@ -7,6 +7,7 @@ var buttonMin = document.querySelector('.button-min');
 var buttonMax = document.querySelector('.button-max');
 var lowHigh = document.querySelector( '.too-low-too-high');
 var output = document.querySelector('.output');
+var lastGuessText = document.querySelector('.last-guess-was')
 var rangeOutput = document.querySelector('.range-output')
 var randomNumber = Math.floor(Math.random() * 100 + 1);
 var minRange = document.querySelector('.min-range');
@@ -17,13 +18,16 @@ buttonGuess.addEventListener('click', function(event) {
   event.preventDefault();
   displayGuess();
   var randomNumber = Math.floor(Math.random() * 100 + 1);
+  lastGuessText.innerText = 'Your last guess was:'
+  clearInputField();
 });
 
 buttonClear.addEventListener('click', function (event) {
   event.preventDefault();
   guess.value = '';
-  output.innerText = '';
-  lowHigh.innerText = '';
+  lastGuessText.innerText = "Keep Going!"
+  output.innerText = String.fromCodePoint(0x2728);
+  lowHigh.innerText = 'Guess a number:';
 });
 
 buttonMax.addEventListener('click', function (event) {
@@ -32,6 +36,7 @@ buttonMax.addEventListener('click', function (event) {
 });
 
 buttonReset.addEventListener('click', function (event) {
+  output.innerText = ''
   resetRandom();
 });
 
@@ -48,12 +53,17 @@ function displayGuess() {
   } else if (parsedNumber < randomNumber) {
     lowHigh.innerText = 'That is too low :(';
   } else if (parsedNumber === randomNumber) {
-    lowHigh.innerText = 'BOOM!';
+    lowHigh.innerText = randomNumber + ' BOOM!';
+    output.innerText = String.fromCodePoint(0x1F9D9);
     maxRange.value = 10 + parseInt(maxRange.value);
     minRange.value = -10 + parseInt(minRange.value);
     minMaxGuessRange();
   } 
 }
+
+function clearInputField() {
+  guess.value = '';
+};
 
 function enableButtons(event) {
   event.preventDefault();
@@ -78,21 +88,9 @@ function minMaxGuessRange() {
 function resetRandom() {
   guess.value = '';
   output.innerText = '';
-  lowHigh.innerText = '';
+  lowHigh.innerText = 'Enter a guess, above!';
   var randomNumber = Math.floor(Math.random() * 100 + 1);
 }
-
-// Phase 3
-// Add additional inputs that allow the user to specify the minimum/maximum range.
-// Upon successful win, user’s range is updated:
-// Every time the user wins a round increase the maximum number by 10.
-// Every time the user wins a round decrease the minimum number by 10.
-// Appropriate UI is incorporated such that user understands what is happening.
-// (Pro-tip: You’ll need to adjust the input fields to accept the new minimum and maximum numbers.)
-
-// you could make your min-max function 1 function, where you are basically parsing the user input from both min input and max input and assigning them to a variable called minGuess or maxGuess 
-
-// then you could reassign your get random number function and pass the minGuess and maxGuess as parameters
 
 
 
