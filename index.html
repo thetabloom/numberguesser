@@ -18,19 +18,28 @@
             <button class="button-clear" aria-label="clear the field button"disabled>Clear
             </button>
         </form>
-          <h2 class="last-guess-was">Your last guess was:
+          <h2 class="last-guess-was">Let's Play!
           </h2>
             <p class="output">
             </p> 
-          <h2 class="too-low-too-high">
+          <h2 class="too-low-too-high">Enter a Guess: 
           </h2>
             <button class="button-reset" disabled="true">Reset
             </button>
-            <p class="range-output">
-            </p> 
-          <form class="range">
-          <input type="number"  class="min-range" value= "1"> 
-          <input type="number" class="max-range" value="100">
+              <p class="range-output">
+                Number Guesser Levels up your guess range by expanding it -10 and +10.  
+              </p>
+              <p class="your-own-range-output">
+                You can also set your own range!
+                Hit enter below!
+              </p> 
+        <form class="range">
+          <label for="min">min
+            <input type="number" class="min-range" value="1"> 
+          </label>
+          <label for="max">max
+            <input type="number" class="max-range" value="100">
+          </label>
             <button class="button-max" >Enter
             </button>
         </form>
